@@ -1,0 +1,62 @@
+:root {
+    --transition-effect: 0.25s cubic-bezier(.25, -0.59, .82, 1.66) .3s;
+}
+
+body {
+    background: #fff;
+    transition: var(--transition-effect);
+}
+
+body.dark {
+    background: #111;
+    color: white;
+}
+
+body.dark h3 {
+    color: black;
+}
+
+#wrapper1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.switch-toggle {
+    width: 40px;
+    min-height: 20px;
+    appearance: none;
+    background: #83d8ff;
+    border-radius: 26px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 16px rgba(0, 0, 0, .3);
+    transition: var(--transition-effect);
+}
+
+.switch-toggle::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: #efe2bf;
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .3);
+    transition: var(--transition-effect);
+}
+
+.switch-toggle:checked {
+    background: #749dd6;
+}
+
+.switch-toggle:checked:before {
+    left: 22px;
+}
+
+.switch-toggle .product-content h3 a,
+.switch-toggle .product-price span {
+    color: white;
+}
